@@ -18,10 +18,18 @@ public class AfterThrowingDemoApp {
 		AccountDAO accountDAO = context.getBean("accountDAO", AccountDAO.class);
 
 		// call method to find the account
-		List<Account> accountList = accountDAO.findAccounts();
+		List<Account> accountList = null;
+		try {
+			// add a boolean flag to simulate exceptions
+			boolean tripWire = true;
+			accountList = accountDAO.findAccounts(tripWire);
+		} catch (Exception e) {
+			System.out.println("\n\nMain program ... caught exception: " + e);
+		}
+
 
 		// display the accounts
-		System.out.println("\n\nMain program: AfterReturnDemoApp");
+		System.out.println("\n\nMain program: AfterThrowingDemoApp");
 		System.out.println("-----");
 
 		System.out.println(accountList);

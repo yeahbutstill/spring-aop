@@ -87,10 +87,17 @@ public class MyDemoLoggingAspect {
 
     }
 
-    @AfterThrowing(value = "execution(* com.yeahbutstill.dao.AccountDAO.findAccounts(..))", throwing = "throwable")
+    @AfterThrowing(pointcut = "execution(* com.yeahbutstill.dao.AccountDAO.findAccounts(..))",
+            throwing = "throwable")
     public void afterThrowingFindAccountsAdvice(JoinPoint joinPoint, Throwable throwable) {
+
+        // print out which method we are advising on
+        String method = joinPoint.getSignature().toShortString();
+        System.out.println("\n=======>>>> Executing @AfterThrowing on method: " + method);
+
         // log the exception
         System.out.println("\n=========>>> The exception is: " + throwable);
+
     }
 
 }
