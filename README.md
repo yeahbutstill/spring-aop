@@ -90,3 +90,19 @@
 - @within - method di object yang memiliki annotation yang ditentukan
 - @annotation - method memiliki annotation yang ditentukan
 - bean - object dengan nama bean sesuai yang ditentukan
+
+## Advice
+- Advice adalah aksi yang dilakukan oleh Aspect pada Join Point 
+- Terdapat banyak sekali jenis Advice, misal Before, After, dan Around
+
+## Jenis Advice
+- Before - Aspect akan menjalankan aksi sebelum Join Point
+- AfterReturning - Aspect akan menjalankan aksi setelah Join Point return secara normal
+- AfterThrowing - Aspect akan menjalankan aksi setelah Join Point throw exception
+- After - Aspect akan menjalankan aksi setelah selesai Join Point, After harus bisa menangani return normal atau throw exception
+- Around - Aspect memiliki kesempatan untuk menjalankan aksi sebelum dan setelah
+
+## Advices Annotation
+- Semua jenis Advice direpresentasikan dalam annotation di package org.aspectj.lang.annotation
+- https://javadoc.io/doc/org.aspectj/aspectjrt/latest/org/aspectj/lang/annotation/package-summary.html
+- Saat menggunakan Advice, kita harus tentukan Pointcut yang akan kita gunakan, caranya dengan menyebutkan nama method dari Pointcut nya
