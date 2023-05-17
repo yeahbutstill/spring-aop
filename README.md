@@ -106,3 +106,8 @@
 - Semua jenis Advice direpresentasikan dalam annotation di package org.aspectj.lang.annotation
 - https://javadoc.io/doc/org.aspectj/aspectjrt/latest/org/aspectj/lang/annotation/package-summary.html
 - Saat menggunakan Advice, kita harus tentukan Pointcut yang akan kita gunakan, caranya dengan menyebutkan nama method dari Pointcut nya
+
+## Advice Parameter
+- Saat kita membuat Advice, kita juga bisa mendapatkan informasi dari detail eksekusi method nya dari object JoinPoint
+- Kita bisa tambahkan parameter JoinPoint di method Advice yang kita buat
+- https://javadoc.io/doc/org.aspectj/aspectjrt/latest/org/aspectj/lang/JoinPoint.html 
