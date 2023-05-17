@@ -72,3 +72,21 @@
 - Untuk membuat Pointcut, kita perlu menggunakan annotation Pointcut
 - https://javadoc.io/doc/org.aspectj/aspectjrt/latest/org/aspectj/lang/annotation/Pointcut.html 
 
+## Pointcut Expression
+- Saat kita membuat Pointcut, maka kita harus menambahkan expression yang berisi kondisi untuk Join Point nya 
+- Misal kita ingin membuat Pointcut untuk semua method di class HelloService, maka kita harus buat kondisi tersebut dalam bentuk Pointcut Expression 
+- AspectJ sebenarnya mendukung banyak sekali Pointcut Expression, namun Spring AOP hanya mendukung yang berhubungan dengan eksekusi method
+
+## Daftar Pointcut Expresion(1)
+- execution - eksekusi method
+- within - object sesuai yang ditentukan
+- this - bean reference adalah instance tipe yang ditentukan
+- target - object adalah instance dari tipe yang ditentukan
+- args - argument method adalah instance dari tipe yang ditentukan
+
+## Daftar Pointcut Expresion(2)
+- @target - object memiliki annotation yang ditentukan
+- @args - arguments method memiliki annotation yang ditentukan
+- @within - method di object yang memiliki annotation yang ditentukan
+- @annotation - method memiliki annotation yang ditentukan
+- bean - object dengan nama bean sesuai yang ditentukan
