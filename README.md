@@ -53,3 +53,14 @@
 - Oleh karena itu, kita perlu menambahkan behavior ke Aspect dengan cara menambahkan method pada Aspect tersebut
 - Namun tidak sembarang method, ada ketentuannya
 
+## Join Point
+- Join Point adalah titik lokasi eksekusi program
+- AspectJ sendiri sebenarnya mendukung banyak sekali Join Point, namun Spring AOP hanya mendukung Joint Point pada eksekusi method di Bean
+
+## Contoh Join Point di Spring AOP
+- Eksekusi method hello() di class HelloService 
+- Eksekusi semua method public di class HelloService 
+- Eksekusi semua method yang terdapat annotation @Test 
+- Eksekusi method di package service yang throw Exception 
+- Dan lain-lain 
+- Intinya adalah titik lokasi eksekusi method dengan kriteria tertentu, sehingga bisa melintasi satu atau lebih method dan object
