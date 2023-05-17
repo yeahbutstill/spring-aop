@@ -64,3 +64,11 @@
 - Eksekusi method di package service yang throw Exception 
 - Dan lain-lain 
 - Intinya adalah titik lokasi eksekusi method dengan kriteria tertentu, sehingga bisa melintasi satu atau lebih method dan object
+
+## Pointcut
+- Pointcut adalah predikat yang cocok dengan Join Point 
+- Secara sederhana, Pointcut merupakan kondisi yang digunakan untuk menentukan Join Point 
+- Dan ketika kondisi terpenuhi, maka Aspect akan mengeksekusi Advice (akan dibahas di materi sendiri)
+- Untuk membuat Pointcut, kita perlu menggunakan annotation Pointcut
+- https://javadoc.io/doc/org.aspectj/aspectjrt/latest/org/aspectj/lang/annotation/Pointcut.html 
+
