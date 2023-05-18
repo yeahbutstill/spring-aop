@@ -146,3 +146,10 @@
 - execution(* com.yeahbutstill.service.*.*(..)) : Semua method di package service
 - execution(* com.yeahbutstill.service..*.*(..)) : Semua method di package service dan sub package nya
 
+## Multiple Pointcut
+- Saat kita menggunakan Pointcut atau Advice, kita bisa menggunakan lebih dari satu Pointcut Expression
+- Hal ini kadang bermanfaat ketika kita mau melakukan kombinasi untuk beberapa Pointcut sehingga lebih mudah digunakan
+- Misal kita membuat pointcut khusus untuk package service
+- Lalu kita membuat pointcut khusus untuk public method
+- Kita bisa gabung semuanya sehingga terbentuk pointcut baru, package service, semua bean yang suffix nya Service dan method nya public
+- Kita bisa gunakan tanda && untuk menggabungkan Pointcut

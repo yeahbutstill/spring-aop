@@ -60,4 +60,21 @@ public class LogAspect {
         log.info("Execute method with parameter {}", value);
     }
 
+    @Pointcut("execution(* com.yeahbutstill.service.*.*(..))")
+    public void pointcutServicePackage() {}
+
+    @Pointcut("bean(*Service)")
+    public void pointcutServiceBean() {}
+
+    @Pointcut("execution(public * *(..))")
+    public void pointcutPublicMethod() {}
+
+    @Pointcut("pointcutServicePackage() && pointcutServiceBean() && pointcutPublicMethod()")
+    public void publicMethodForService() {}
+
+    @Before("publicMethodForService()")
+    public void logAllServiceMethod() {
+        log.info("Log All Service Method");
+    }
+
 }
