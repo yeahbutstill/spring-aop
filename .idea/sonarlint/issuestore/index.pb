@@ -11,7 +11,5 @@ h
 8src/main/java/com/yeahbutstill/AfterThrowingDemoApp.java,8/5/8507de85b0190c2d226d49bef7d453c62e266224
 h
 8src/main/java/com/yeahbutstill/AfterRetuningDemoApp.java,e/1/e1bf03cbe41bf0d993cd92b5a658cd4f30c756a8
-g
-7src/main/java/com/yeahbutstill/AfterFinallyDemoApp.java,7/1/71f9d7125609a77ac2fc81656ee34c36dcdd296d
 h
 8src/main/java/com/yeahbutstill/SpringAopApplication.java,9/5/95e8002d87712fe62ff4c611febb0e1e3f8ca7e7

@@ -116,3 +116,33 @@
 - Khusus untuk Advice dengan jenis Around, maka kita gunakan parameter ProceedingJoinPoint, hal ini karena untuk Around, kita bisa melakukan sebelum dan setelah 
 - Dimana untuk mengeksekusi method aslinya dari Join Point, kita harus memanggil method ProceedingJoinPoint.proceed(args)
 - https://javadoc.io/doc/org.aspectj/aspectjrt/latest/org/aspectj/lang/ProceedingJoinPoint.html 
+
+## Pointcut Expression Format
+- Sebelumnya kita sudah coba menggunakan Pointcut Expression untuk target
+- Tapi jenis Pointcut memiliki format sendiri-sendiri, dan yang paling sering digunakan biasanya adalah execution
+
+## Non Execution
+- Untuk format yang Pointcut Expression yang bukan execution sangat sederhana, cukup sebutkan nama target nya
+- Target juga bisa menggunakan regex jika kita mau ke lebih dari satu Type
+
+## Contoh Non Execution
+- within(com.yeahbutstill.service.*) : Semua method di bean di package service
+- within(com.yeahbutstill.service..*) : Semua method di bean di package service dan di sub package nya
+- target(com.yeahbutstill.AccountService) : Semua method di bean AccountService
+- args(java.lang.String, java.lang.String) : Semua method di bean yang memiliki dua parameter String
+- @target(org.springframework.transaction.annotation.Transaction) : Semua method yang memiliki annotation Transactional
+- bean(traceService) : Semua method di bean dengan nama traceService
+- bean(*Service) : semua method di bean dengan akhiran Service
+
+## Execution
+- Untuk execution, format expression nya lebih kompleks, yaitu dengan format:
+- execution(modifier-pattern type-pattern.method-pattern(param-pattern) throws-pattern)
+- https://www.eclipse.org/aspectj/doc/released/progguide/semantics-pointcuts.html 
+
+## Contoh Execution
+- execution(public **(..)) : Semua method public
+- execution(* set*(..)) : Semua method dengan prefix set
+- execution(* com.yeahbutstill.service.AccountService.*(..)) : Semua method di class AccountService
+- execution(* com.yeahbutstill.service.*.*(..)) : Semua method di package service
+- execution(* com.yeahbutstill.service..*.*(..)) : Semua method di package service dan sub package nya
+
