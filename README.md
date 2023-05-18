@@ -153,3 +153,14 @@
 - Lalu kita membuat pointcut khusus untuk public method
 - Kita bisa gabung semuanya sehingga terbentuk pointcut baru, package service, semua bean yang suffix nya Service dan method nya public
 - Kita bisa gunakan tanda && untuk menggabungkan Pointcut
+
+## Parsing Argument
+- Saat kita membuat Advice, kadang kita ingin mendapatkan data parameter yang ada di Join Point
+- Sebenarnya kita bisa menggunakan object JoinPoint.getArgs(), namun itu datanya berubah Object[]
+- Kita bisa memanfaatkan Pointcut Expreession args untuk mengambil data parameter, dan mengirimnya ke method Advice
+
+## Cara Mengirim Parameter
+- Cukup gunakan args(value), artinya parameter akan dikirim ke parameter di advice dengan nama value
+- args(value1, value2), artinya parameter akan dikirim ke parameter value1 dan value2 di advice
+- Jika kita hanya peduli dengan parameter awal, kita bisa gunakan args(value1, value2, ..)
+

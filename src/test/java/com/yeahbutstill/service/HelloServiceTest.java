@@ -20,6 +20,7 @@ class HelloServiceTest {
 
         Assertions.assertEquals("Hello Dani", helloService.hello("Dani"));
         Assertions.assertEquals("Bye Dani", helloService.bye("Dani"));
+        Assertions.assertEquals("Hello Dani Setiawan", helloService.hello("Dani", "Setiawan"));
 
         helloService.test();
     }

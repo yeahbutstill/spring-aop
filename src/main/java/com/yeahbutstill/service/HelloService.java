@@ -22,4 +22,9 @@ public class HelloService {
         log.info("Call HelloService.test()");
     }
 
+    public String hello(String firstName, String lastName) {
+        log.info("Call HelloService.hello()");
+        return "Hello " + firstName + " " + lastName;
+    }
+
 }
