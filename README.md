@@ -111,3 +111,8 @@
 - Saat kita membuat Advice, kita juga bisa mendapatkan informasi dari detail eksekusi method nya dari object JoinPoint
 - Kita bisa tambahkan parameter JoinPoint di method Advice yang kita buat
 - https://javadoc.io/doc/org.aspectj/aspectjrt/latest/org/aspectj/lang/JoinPoint.html 
+
+## Proceeding Join Point
+- Khusus untuk Advice dengan jenis Around, maka kita gunakan parameter ProceedingJoinPoint, hal ini karena untuk Around, kita bisa melakukan sebelum dan setelah 
+- Dimana untuk mengeksekusi method aslinya dari Join Point, kita harus memanggil method ProceedingJoinPoint.proceed(args)
+- https://javadoc.io/doc/org.aspectj/aspectjrt/latest/org/aspectj/lang/ProceedingJoinPoint.html 

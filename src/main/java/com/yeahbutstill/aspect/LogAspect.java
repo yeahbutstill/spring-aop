@@ -2,6 +2,8 @@ package com.yeahbutstill.aspect;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -30,6 +32,23 @@ public class LogAspect {
         String className = joinPoint.getTarget().getClass().getName();
         String methodName = joinPoint.getSignature().getName();
         log.info("Before className {}. methodName {}", className, methodName);
+    }
+
+    @Around("helloServiceMethod()")
+    public Object aroundHelloServiceMethod(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+
+        String className = proceedingJoinPoint.getTarget().getClass().getName();
+        String methodName = proceedingJoinPoint.getSignature().getName();
+        try {
+            log.info("Around Before className {}. methodName {}", className, methodName);
+            return proceedingJoinPoint.proceed(proceedingJoinPoint.getArgs());
+        } catch (Throwable e) {
+            log.info("Around Error className {}. methodName {}", className, methodName);
+            throw e;
+        } finally {
+            log.info("Around Finally className {}. methodName {}", className, methodName);
+        }
+
     }
 
 }
